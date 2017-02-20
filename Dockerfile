@@ -8,5 +8,5 @@ RUN \
   sed -ri 's#<VirtualHost (.+):([0-9]+)>#<VirtualHost \1:8080>#g' extra/httpd-vhosts.conf && \
   sed -ri 's#^\s*ErrorLog.*#ErrorLog logs/error.log#g' httpd.conf && \
   sed -ri 's#^\s*CustomLog.*#CustomLog logs/access.log common#g' httpd.conf && \
-  chmod -R 777 logs && \
+  mkdir -m 777 logs && \
   cat -n httpd.conf
